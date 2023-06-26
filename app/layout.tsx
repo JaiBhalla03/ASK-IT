@@ -4,6 +4,7 @@ import SessionProvider from "@/components/SessionProvider";
 import {getServerSession} from "next-auth";
 import {authOptions} from "@/pages/api/auth/[...nextauth]";
 import Login from "@/components/Login";
+import ClientProvider from "@/components/ClientProvider";
 
 export const metadata = {
   title: 'Next.js',
@@ -24,6 +25,7 @@ export default async function RootLayout({children,}: { children: React.ReactNod
                   <div className={'bg-[#202020] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]'}>
                       <Sidebar/>
                   </div>
+                  <ClientProvider/>
                   <div className={'bg-[#161616] flex-1'}>
                       {children}
                   </div>
